@@ -1,39 +1,41 @@
-title: "Hada.io Mirror"
-description: "Mirrored posts from news.hada.io"
-url: "https://sungheyn.github.io"
+title: GeekNews
+email: your-email@example.com
+description: >-
+  개발/기술/스타트업 뉴스 서비스
 baseurl: ""
+url: "https://Sungheyn.github.io"
 
-# Build settings
-markdown: kramdown
-highlighter: rouge
-theme: minima
+author:
+  name: GeekNews
+  email: your-email@example.com
 
-# Sass
-sass:
-  sass_dir: _sass
+# theme: minima  # Using custom layout instead
 
-# Pagination
-paginate: 10
-paginate_path: "/page:num/"
-
-# Plugins
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
 
-# Collections
-collections:
-  posts:
-    output: true
-    permalink: /:year/:month/:day/:title/
+paginate: 10
+paginate_path: "/page:num/"
 
-# Exclude from processing
+markdown: kramdown
+highlighter: rouge
+
+permalink: /:year/:month/:day/:title/
+
 exclude:
-  - mirror_hada.py
-  - requirements.txt
-  - .hada_mirror_data.json
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
 
-# Include
-include:
-  - _posts
+header_pages:
+  - about.md
+  - archive.md
+
+show_excerpts: true
