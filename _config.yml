@@ -1,0 +1,39 @@
+title: "Hada.io Mirror"
+description: "Mirrored posts from news.hada.io"
+url: "https://sungheyn.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Sass
+sass:
+  sass_dir: _sass
+
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title/
+
+# Exclude from processing
+exclude:
+  - mirror_hada.py
+  - requirements.txt
+  - .hada_mirror_data.json
+
+# Include
+include:
+  - _posts
