@@ -4,6 +4,8 @@ title: "Welcome to My Blog!"
 date: 2025-01-28 10:00:00 +0900
 categories: blog
 tags: [welcome, first-post]
+points: 1
+author: GeekNews
 ---
 
 # Welcome!

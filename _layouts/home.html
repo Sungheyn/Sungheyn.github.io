@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<div class="posts-container">
+  <ol class="posts-list">
+    {% for post in paginator.posts %}
+    <li class="post-item">
+      <span class="post-rank">{% if paginator.page == 1 %}{{ forloop.index }}{% else %}{% assign rank = paginator.per_page | times: paginator.previous_page | plus: forloop.index %}{{ rank }}{% endif %}</span>
+      <div class="post-content">
+        <div class="post-header">
+          <a href="{{ post.url | relative_url }}" class="post-title">{{ post.title }}</a>
+          {% if post.external_url %}
+          <span class="post-domain">({{ post.external_url | replace: 'https://', '' | replace: 'http://', '' | split: '/' | first }})</span>
+          {% endif %}
+        </div>
+        <div class="post-meta">
+          <span class="post-points">{{ post.points | default: 0 }} points</span>
+          <span class="post-author">by {{ post.author | default: site.author.name }}</span>
+          <span class="post-time">{{ post.date | date: "%Y-%m-%d %H:%M" }}</span>
+          <a href="{{ post.url | relative_url }}#comments" class="post-comments">댓글</a>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+
+  {% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="page-link">이전</a>
+    {% endif %}
+    <span class="page-number">페이지 {{ paginator.page }} / {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}" class="page-link">다음</a>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+

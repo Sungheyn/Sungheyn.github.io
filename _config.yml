@@ -1,16 +1,15 @@
-title: My Personal Blog
+title: GeekNews
 email: your-email@example.com
 description: >-
-  Welcome to my personal blog. I share my thoughts, experiences, 
-  and knowledge about various topics.
+  개발/기술/스타트업 뉴스 서비스
 baseurl: ""
 url: "https://Sungheyn.github.io"
 
 author:
-  name: Your Name
+  name: GeekNews
   email: your-email@example.com
 
-theme: minima
+# theme: minima  # Using custom layout instead
 
 plugins:
   - jekyll-feed
